@@ -2,7 +2,6 @@ package com.czz.test.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
@@ -54,7 +53,7 @@ public class TimeServer {
     private class ChildChannelHandler extends ChannelInitializer<SocketChannel>{
 
         @Override
-        protected void initChannel(SocketChannel socketChannel) throws Exception {
+        protected void initChannel(SocketChannel socketChannel) {
             socketChannel.pipeline().addLast(new TimeServerHandler());
         }
     }

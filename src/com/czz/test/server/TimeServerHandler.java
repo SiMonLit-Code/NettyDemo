@@ -22,7 +22,7 @@ public class TimeServerHandler extends ChannelInboundHandlerAdapter {
      * @param msg
      */
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws UnsupportedEncodingException {
-        //将msg转为Netty的ByteBuf对象类似于JDK中的java.nio.ByteBuffer，不过 ButeBuf 功能更强，更灵活
+        //将msg转为Netty的ByteBuf对象类似于JDK中的java.nio.ByteBuffer，不过 ByteBuf 功能更强，更灵活
         ByteBuf buf = (ByteBuf) msg;
 
         //buf.readableBytes()：获取缓冲区可读字节数，然后创建字节数组
